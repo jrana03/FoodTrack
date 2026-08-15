@@ -1,0 +1,7 @@
+things to edit: 
+visual: 
+
+
+technical: 
+- make "FoodTrack" title lead to main page 
+- setup backend for supabase

@@ -1,0 +1,28 @@
+Your development order should be:
+
+Build and test everything locally (npm run dev) with localStorage (which is what Claude Code set up)
+
+All features working: add reviews, edit, delete, sort, star ratings, etc.
+UI looks good and responsive
+No bugs or missing functionality
+
+
+Once the app is feature-complete, then set up Supabase:
+
+Create a free Supabase account
+Set up the database tables
+Connect your frontend by replacing the localStorage calls in reviewService.js with Supabase calls
+Test everything again with real backend data
+
+When you're ready to wire Supabase
+1. Copy .env.example → .env, fill in your project URL and anon key.
+2. src/services/reviewService.js, replace each function body with the Supabase call shown in the comment directly above it (they're already in the right shape).
+3. Delete the load() and save() helper functions at the top of that file — they're no longer needed.
+
+
+Once Supabase is working, set up GitHub:
+
+Create a GitHub repo
+Push your code to it
+Connect GitHub Pages
+Deploy your built app
