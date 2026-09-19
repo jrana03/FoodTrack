@@ -78,7 +78,10 @@ export default function AddReview() {
     try {
       const reviews = await getReviews()
       const clash = reviews.some(r =>
-        r.id !== id &&
+        // Route params are strings, while a database ID may be returned as a
+        // number. Compare their string forms so the review being edited does
+        // not count as a duplicate of itself.
+        String(r.id) !== String(id) &&
         (r.name ?? '').trim().toLowerCase() === name &&
         normalizeText(r.contributor).toLowerCase() === contributor
       )
